@@ -1,0 +1,44 @@
+@function calc-rem($size) {
+  $rem: 16;
+  @return ($size / $rem) * 1rem;
+}
+
+:host {
+  header {
+    width: 100%;
+    height: calc-rem(60);
+    padding: 0 calc-rem(20);
+    background-color: var(--primary-color);
+
+    &,
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    ul {
+      li {
+        padding: 0 calc-rem(15) 0 0;
+        font-size: calc-rem(12);
+        font-weight: 700;
+
+        &,
+        a {
+          color: var(--text-menu);
+          text-decoration: none;
+        }
+
+        &:last-child {
+          padding: 0;
+          button {
+            img {
+              width: calc-rem(21);
+            }
+          }
+        }
+      }
+    }
+  }
+}
